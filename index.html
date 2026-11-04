@@ -117,7 +117,6 @@
                 <div class="story-ring p-1 rounded-full shadow-md transition duration-300 transform group-hover:scale-105">
                     <div class="bg-white p-1 rounded-full">
                         <div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-[#FAF7F2] flex items-center justify-center overflow-hidden border border-brand-border">
-                            <!-- SVG que recrea el logo del perrito -->
                             <svg viewBox="0 0 200 200" class="w-24 h-24 text-brand-primary" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M 40,110 C 35,60 70,30 110,30 C 150,30 170,70 160,110 C 155,130 135,160 100,160 C 65,160 45,130 40,110 Z" />
                                 <path d="M 70,80 Q 75,95 80,80" stroke-width="10" />
@@ -136,26 +135,31 @@
 
             <!-- Información del Perfil -->
             <div class="flex-1 text-center md:text-left">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-3 mb-4">
-                <h1 class="text-2xl font-bold font-serif tracking-tight text-brand-primary">el_taller_de_brownie</h1>
-                <div class="flex items-center justify-center space-x-2">
-                    <button id="followBtn" onclick="toggleFollow()" class="bg-brand-primary hover:bg-brand-hover text-white px-4 py-1.5 rounded-lg text-sm font-semibold transition shadow-sm">
-                        Seguir
-                    </button>
-                    <a href="https://www.instagram.com/el_taller_de_brownie" target="_blank" class="bg-brand-lightAccent hover:bg-brand-border text-brand-primary px-3 py-1.5 rounded-lg text-sm font-semibold transition">
-                        Ver en Instagram
-                    </a>
-                    <button onclick="shareProfile()" class="bg-brand-lightAccent hover:bg-brand-border text-brand-primary px-3 py-1.5 rounded-lg text-sm font-medium transition" title="Compartir Perfil">
-                        <i class="fa-solid fa-share-nodes"></i>
-                    </button>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-3 mb-4">
+                    <h1 class="text-2xl font-bold font-serif tracking-tight text-brand-primary">el_taller_de_brownie</h1>
+                    <div class="flex items-center justify-center space-x-2">
+                        <button id="followBtn" onclick="toggleFollow()" class="bg-brand-primary hover:bg-brand-hover text-white px-4 py-1.5 rounded-lg text-sm font-semibold transition shadow-sm">
+                            Seguir
+                        </button>
+                        <a href="https://www.instagram.com/el_taller_de_brownie" target="_blank" class="bg-brand-lightAccent hover:bg-brand-border text-brand-primary px-3 py-1.5 rounded-lg text-sm font-semibold transition">
+                            Ver en Instagram
+                        </a>
+                        <button onclick="shareProfile()" class="bg-brand-lightAccent hover:bg-brand-border text-brand-primary px-3 py-1.5 rounded-lg text-sm font-medium transition" title="Compartir Perfil">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
+                    </div>
                 </div>
+                <p class="text-sm text-gray-700 leading-relaxed max-w-lg mx-auto md:mx-0">
+                    ✨ Impresión Boutique & Papelería Creativa<br>
+                    🏷️ Stickers, Vinil, Etiquetas y Material Educativo<br>
+                    📍 Cancún, Quintana Roo | Envíos locales y nacionales
+                </p>
             </div>
         </section>
 
         <!-- Historias Destacadas (Highlights) -->
         <section class="mb-8 overflow-x-auto pb-2">
             <div class="flex space-x-6 min-w-max px-2 justify-start md:justify-center">
-                
                 <div onclick="openStoryModal(0)" class="flex flex-col items-center space-y-1.5 cursor-pointer group">
                     <div class="w-16 h-16 rounded-full p-0.5 border-2 border-brand-accent/60 group-hover:border-brand-accent transition shadow-sm">
                         <div class="w-full h-full bg-brand-lightAccent rounded-full flex items-center justify-center text-brand-accent">
@@ -200,7 +204,6 @@
                     </div>
                     <span class="text-xs font-semibold text-brand-primary">Cancún 📍</span>
                 </div>
-
             </div>
         </section>
 
@@ -226,14 +229,12 @@
             </div>
         </section>
 
-        <!-- Grid de Publicaciones de Instagram (3 columnas) -->
-        <section class="grid grid-cols-3 gap-1 md:gap-4" id="feedGrid">
-            <!-- Las publicaciones se cargan dinámicamente con JS -->
-        </section>
+        <!-- Grid de Publicaciones de Instagram -->
+        <section class="grid grid-cols-3 gap-1 md:gap-4" id="feedGrid"></section>
 
     </main>
 
-    <!-- Pie de Página / Banner -->
+    <!-- Pie de Página -->
     <footer class="bg-white border-t border-brand-border py-6 px-4 text-center text-xs text-gray-600">
         <div class="max-w-4xl mx-auto space-y-2">
             <p class="font-bold text-brand-primary font-serif text-sm">¡El Taller de Brownie!</p>
@@ -245,21 +246,14 @@
     <!-- Modal Detallado de Publicación -->
     <div id="postModal" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-2 sm:p-4 transition-opacity duration-300">
         <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row shadow-2xl relative animate-fade-in">
-            
-            <!-- Botón Cerrar -->
             <button onclick="closePostModal()" class="absolute top-3 right-3 z-10 bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/80 transition">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
-            <!-- Lado Visual del Post -->
-            <div id="modalVisual" class="w-full md:w-1/2 bg-brand-lightAccent flex flex-col items-center justify-center p-6 relative min-h-[220px] md:min-h-[450px]">
-                <!-- Contenido Dinámico -->
-            </div>
+            <div id="modalVisual" class="w-full md:w-1/2 bg-brand-lightAccent flex flex-col items-center justify-center p-6 relative min-h-[220px] md:min-h-[450px]"></div>
 
-            <!-- Lado de Información y Precios -->
             <div class="w-full md:w-1/2 p-6 flex flex-col justify-between overflow-y-auto max-h-[55vh] md:max-h-full bg-white">
                 <div>
-                    <!-- Cabecera del Autor -->
                     <div class="flex items-center space-x-3 pb-3 border-b border-gray-100 mb-4">
                         <div class="w-10 h-10 rounded-full bg-brand-lightAccent flex items-center justify-center border border-brand-border font-bold text-brand-primary">
                             🐾
@@ -270,23 +264,18 @@
                         </div>
                     </div>
 
-                    <!-- Título y Descripción -->
                     <h3 id="modalTitle" class="font-serif font-bold text-xl text-brand-primary mb-2"></h3>
                     <p id="modalDescription" class="text-sm text-gray-600 mb-4 leading-relaxed"></p>
 
-                    <!-- Lista de Precios Oficiales -->
                     <div class="bg-brand-bg rounded-xl p-4 border border-brand-border mb-4 shadow-sm">
                         <h4 class="text-xs font-bold uppercase tracking-wider text-brand-accent mb-3 flex items-center space-x-1.5">
                             <i class="fa-solid fa-list-check"></i>
                             <span>Opciones y Precios Oficiales</span>
                         </h4>
-                        <ul id="modalPrices" class="space-y-2.5 text-sm text-brand-primary">
-                            <!-- Precios dinámicos -->
-                        </ul>
+                        <ul id="modalPrices" class="space-y-2.5 text-sm text-brand-primary"></ul>
                     </div>
                 </div>
 
-                <!-- Botones de Acción -->
                 <div class="pt-3 border-t border-gray-100 space-y-2">
                     <button id="addToCartBtn" onclick="addCurrentToCart()" class="w-full bg-brand-lightAccent hover:bg-brand-border text-brand-primary font-semibold py-2.5 rounded-lg transition flex items-center justify-center space-x-2 text-sm">
                         <i class="fa-solid fa-basket-shopping text-brand-accent"></i>
@@ -301,38 +290,29 @@
         </div>
     </div>
 
-    <!-- Modal de Historias (Instagram Story Viewer) -->
+    <!-- Modal de Historias -->
     <div id="storyModal" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center p-4">
         <div class="relative w-full max-w-sm bg-brand-primary rounded-2xl overflow-hidden aspect-[9/16] text-white flex flex-col justify-between p-6 shadow-2xl animate-fade-in">
-            <!-- Barra de Progreso de la Historia -->
             <div class="absolute top-3 left-3 right-3 flex space-x-1">
                 <div class="h-1 bg-white/30 flex-1 rounded-full overflow-hidden">
                     <div id="storyProgressBar" class="h-full bg-white w-0 transition-all duration-300"></div>
                 </div>
             </div>
 
-            <!-- Botón Cerrar -->
             <button onclick="closeStoryModal()" class="absolute top-6 right-4 z-10 text-white/80 hover:text-white">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
 
-            <!-- Cabecera de la Historia -->
             <div class="mt-4 flex items-center space-x-2">
-                <div class="w-8 h-8 rounded-full bg-white text-brand-primary flex items-center justify-center font-bold text-xs shadow">
-                    🐾
-                </div>
+                <div class="w-8 h-8 rounded-full bg-white text-brand-primary flex items-center justify-center font-bold text-xs shadow">🐾</div>
                 <div>
                     <p class="font-semibold text-xs">eltallerdebrownie</p>
                     <p class="text-[10px] text-white/70">Historia Destacada</p>
                 </div>
             </div>
 
-            <!-- Contenido de la Historia -->
-            <div id="storyContent" class="my-auto text-center space-y-4 px-2">
-                <!-- Se inyecta dinámicamente -->
-            </div>
+            <div id="storyContent" class="my-auto text-center space-y-4 px-2"></div>
 
-            <!-- Responder por WhatsApp -->
             <div class="mt-auto pt-4">
                 <a id="storyWspLink" href="https://wa.me/529981732170" target="_blank" class="w-full bg-white/20 hover:bg-white/30 backdrop-blur border border-white/40 rounded-full py-2.5 px-4 text-xs font-semibold flex items-center justify-between transition">
                     <span>Enviar mensaje al taller...</span>
@@ -342,11 +322,22 @@
         </div>
     </div>
 
-    <!-- Modal del Carrito de Cotización -->
+    <!-- Modal del Carrito -->
     <div id="cartModal" class="fixed inset-0 z-50 hidden bg-black/60 flex items-center justify-center p-4">
         <div class="bg-white rounded-xl max-w-md w-full p-6 shadow-2xl relative animate-fade-in">
             <button onclick="toggleCartModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
             <h3 class="font-serif font-bold text-xl text-brand-primary mb-4 flex items-center space-x-2">
-                <i class="fa-solid fa-basket-shopping text-brand-accent"></i
+                <i class="fa-solid fa-basket-shopping text-brand-accent"></i>
+                <span>Mi Lista de Cotización</span>
+            </h3>
+
+            <div id="cartItemsList" class="max-h-60 overflow-y-auto space-y-3 mb-4 pr-1"></div>
+
+            <div class="pt-4 border-t border-gray-100 flex justify-between items-center mb-4">
+                <span class="text-sm font-semibold text-gray-600">Total Estimado:</span>
+                <span id="cartTotal" class="text-lg font-bold text-brand-primary">$0.00 MXN</span>
+            </div>
+
+            <a id="sendCartWspBtn" href="#" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg trans
