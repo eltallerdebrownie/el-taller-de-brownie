@@ -36,15 +36,19 @@
             }
         }
     </script>
+    <style>
+        .story-ring { background: linear-gradient(45deg, #C5A059, #A67C52, #E8D2C9, #8B5E3C); }
+    </style>
 </head>
 <body class="bg-brand-bg text-brand-primary font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- Header superior -->
+    <!-- Header Instagram -->
     <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-brand-border px-4 py-2.5">
         <div class="max-w-4xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-2">
                 <i class="fa-brands fa-instagram text-2xl text-brand-primary"></i>
                 <span class="font-bold text-lg tracking-tight font-serif">eltallerdebrownie</span>
+                <i class="fa-solid fa-circle-check text-xs text-brand-accent ml-0.5"></i>
             </div>
             
             <a href="https://wa.me/529602345184" target="_blank" class="bg-green-600 hover:bg-green-700 text-white text-xs px-3 py-1.5 rounded-full font-semibold transition flex items-center space-x-1.5 shadow-sm">
@@ -57,15 +61,24 @@
     <!-- Contenido Principal -->
     <main class="max-w-4xl mx-auto w-full px-3 sm:px-4 pt-6 pb-16 flex-grow">
 
-        <!-- Perfil / Biografía -->
-        <section class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8 mb-8 pb-8 border-b border-brand-border text-center md:text-left">
-            <div class="w-24 h-24 rounded-full bg-[#FAF7F2] flex items-center justify-center overflow-hidden border-2 border-brand-accent shadow-sm">
-                <span class="text-4xl">🐾</span>
+        <!-- Perfil / Biografía Instagram -->
+        <section class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8 mb-6 pb-6 border-b border-brand-border text-center md:text-left">
+            <div class="story-ring p-1 rounded-full shadow-md">
+                <div class="bg-white p-1 rounded-full">
+                    <div class="w-24 h-24 rounded-full bg-[#FAF7F2] flex items-center justify-center overflow-hidden border border-brand-border">
+                        <span class="text-4xl">🐾</span>
+                    </div>
+                </div>
             </div>
 
             <div class="flex-1">
-                <h1 class="text-2xl font-bold font-serif tracking-tight text-brand-primary mb-2">el_taller_de_brownie</h1>
-                <p class="text-sm text-gray-700 leading-relaxed max-w-lg">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-center md:justify-start space-y-2 sm:space-y-0 sm:space-x-3 mb-3">
+                    <h1 class="text-2xl font-bold font-serif tracking-tight text-brand-primary">el_taller_de_brownie</h1>
+                    <a href="https://www.instagram.com/el_taller_de_brownie" target="_blank" class="bg-brand-lightAccent hover:bg-brand-border text-brand-primary text-xs px-3 py-1.5 rounded-lg font-semibold inline-block">
+                        Ver perfil de Instagram
+                    </a>
+                </div>
+                <p class="text-xs md:text-sm text-gray-700 leading-relaxed max-w-lg">
                     🐾 Impresión Boutique, Stickers & Papelería Creativa<br>
                     🏷️ Stickers Estándar, Prémium, Especiales y Material Creativo<br>
                     📍 Cancún, Q. Roo | Entregas locales y envíos
@@ -73,164 +86,197 @@
             </div>
         </section>
 
-        <!-- Catálogo de Productos Individuales -->
-        <h2 class="text-xl font-serif font-bold text-brand-primary mb-6 text-center">Nuestros Productos & Servicios</h2>
+        <!-- Historias Destacadas (Highlights) -->
+        <section class="mb-6 overflow-x-auto pb-2">
+            <div class="flex space-x-6 min-w-max px-2 justify-start md:justify-center">
+                <div class="flex flex-col items-center space-y-1">
+                    <div class="w-14 h-14 rounded-full p-0.5 border-2 border-brand-accent/60 flex items-center justify-center bg-brand-lightAccent text-brand-accent">
+                        <i class="fa-solid fa-note-sticky text-lg"></i>
+                    </div>
+                    <span class="text-[11px] font-semibold text-brand-primary">Stickers 🏷️</span>
+                </div>
+                <div class="flex flex-col items-center space-y-1">
+                    <div class="w-14 h-14 rounded-full p-0.5 border-2 border-brand-accent/60 flex items-center justify-center bg-brand-lightAccent text-brand-accent">
+                        <i class="fa-solid fa-palette text-lg"></i>
+                    </div>
+                    <span class="text-[11px] font-semibold text-brand-primary">Decoración 🎨</span>
+                </div>
+                <div class="flex flex-col items-center space-y-1">
+                    <div class="w-14 h-14 rounded-full p-0.5 border-2 border-brand-accent/60 flex items-center justify-center bg-brand-lightAccent text-brand-accent">
+                        <i class="fa-solid fa-print text-lg"></i>
+                    </div>
+                    <span class="text-[11px] font-semibold text-brand-primary">Papelería 📄</span>
+                </div>
+                <div class="flex flex-col items-center space-y-1">
+                    <div class="w-14 h-14 rounded-full p-0.5 border-2 border-brand-accent/60 flex items-center justify-center bg-brand-lightAccent text-brand-accent">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
+                    </div>
+                    <span class="text-[11px] font-semibold text-brand-primary">Cancún 📍</span>
+                </div>
+            </div>
+        </section>
 
-        <section class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <!-- Barra de Publicaciones -->
+        <div class="border-t border-brand-border mb-4 pt-3 text-center">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-primary flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-table-cells text-sm"></i>
+                <span>Publicaciones & Productos</span>
+            </span>
+        </div>
+
+        <!-- Grid estilo Instagram de 3 Columnas Cuadradas -->
+        <section class="grid grid-cols-3 gap-1.5 md:gap-3">
             
-            <!-- Item 1: Sticker Estándar -->
-            <div class="bg-white rounded-xl border border-brand-border p-4 shadow-sm flex flex-col justify-between">
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-brand-lightAccent flex items-center justify-center text-brand-accent text-xl mx-auto mb-2">
-                        <i class="fa-solid fa-note-sticky"></i>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Stickers</span>
-                    <h3 class="font-bold text-xs md:text-sm text-brand-primary my-1">Sticker A4 Estándar</h3>
-                    <p class="text-[11px] text-gray-500 mb-2">Papel Glossy brillante</p>
-                    <p class="font-bold text-brand-accent text-sm mb-3">$40.00 MXN</p>
-                </div>
-                <a href="https://wa.me/529602345184?text=¡Hola!%20Me%20interesa%20cotizar:%20Sticker%20A4%20Estándar%20($40)" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 rounded-lg transition text-[11px] text-center block">
-                    Pedir por WA
-                </a>
+            <!-- Post 1 -->
+            <div onclick="document.getElementById('modal1').classList.remove('hidden')" class="aspect-square bg-brand-lightAccent rounded-lg border border-brand-border flex flex-col items-center justify-center p-2 cursor-pointer hover:opacity-90 transition">
+                <i class="fa-solid fa-note-sticky text-2xl md:text-3xl text-brand-accent mb-1"></i>
+                <p class="text-[10px] md:text-xs font-bold text-center line-clamp-2">Stickers A4 Estándar</p>
+                <span class="text-[10px] font-bold text-brand-accent mt-0.5">$40</span>
             </div>
 
-            <!-- Item 2: Pack 5 Planillas Estándar -->
-            <div class="bg-white rounded-xl border border-brand-border p-4 shadow-sm flex flex-col justify-between">
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-brand-lightAccent flex items-center justify-center text-brand-accent text-xl mx-auto mb-2">
-                        <i class="fa-solid fa-box-archive"></i>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Stickers</span>
-                    <h3 class="font-bold text-xs md:text-sm text-brand-primary my-1">Pack 5 Planillas Estándar</h3>
-                    <p class="text-[11px] text-gray-500 mb-2">Aproximadamente 100 pzas</p>
-                    <p class="font-bold text-brand-accent text-sm mb-3">$170.00 MXN</p>
-                </div>
-                <a href="https://wa.me/529602345184?text=¡Hola!%20Me%20interesa%20cotizar:%20Pack%205%20Planillas%20Estándar%20($170)" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 rounded-lg transition text-[11px] text-center block">
-                    Pedir por WA
-                </a>
+            <!-- Post 2 -->
+            <div onclick="document.getElementById('modal2').classList.remove('hidden')" class="aspect-square bg-brand-lightAccent rounded-lg border border-brand-border flex flex-col items-center justify-center p-2 cursor-pointer hover:opacity-90 transition">
+                <i class="fa-solid fa-box-archive text-2xl md:text-3xl text-brand-accent mb-1"></i>
+                <p class="text-[10px] md:text-xs font-bold text-center line-clamp-2">Pack 5 Planillas</p>
+                <span class="text-[10px] font-bold text-brand-accent mt-0.5">$170</span>
             </div>
 
-            <!-- Item 3: Sticker Prémium -->
-            <div class="bg-white rounded-xl border border-brand-border p-4 shadow-sm flex flex-col justify-between">
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-brand-lightAccent flex items-center justify-center text-brand-accent text-xl mx-auto mb-2">
-                        <i class="fa-solid fa-droplet-slash"></i>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Stickers</span>
-                    <h3 class="font-bold text-xs md:text-sm text-brand-primary my-1">Sticker A4 Prémium</h3>
-                    <p class="text-[11px] text-gray-500 mb-2">Laminado lavable mate/glossy</p>
-                    <p class="font-bold text-brand-accent text-sm mb-3">$50.00 MXN</p>
-                </div>
-                <a href="https://wa.me/529602345184?text=¡Hola!%20Me%20interesa%20cotizar:%20Sticker%20A4%20Prémium%20($50)" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 rounded-lg transition text-[11px] text-center block">
-                    Pedir por WA
-                </a>
+            <!-- Post 3 -->
+            <div onclick="document.getElementById('modal3').classList.remove('hidden')" class="aspect-square bg-brand-lightAccent rounded-lg border border-brand-border flex flex-col items-center justify-center p-2 cursor-pointer hover:opacity-90 transition">
+                <i class="fa-solid fa-droplet-slash text-2xl md:text-3xl text-brand-accent mb-1"></i>
+                <p class="text-[10px] md:text-xs font-bold text-center line-clamp-2">Stickers Prémium</p>
+                <span class="text-[10px] font-bold text-brand-accent mt-0.5">$50</span>
             </div>
 
-            <!-- Item 4: Sticker Especial -->
-            <div class="bg-white rounded-xl border border-brand-border p-4 shadow-sm flex flex-col justify-between">
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-brand-lightAccent flex items-center justify-center text-brand-accent text-xl mx-auto mb-2">
-                        <i class="fa-solid fa-sparkles"></i>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Stickers</span>
-                    <h3 class="font-bold text-xs md:text-sm text-brand-primary my-1">Sticker A4 Especial</h3>
-                    <p class="text-[11px] text-gray-500 mb-2">Holográfico o Transparente</p>
-                    <p class="font-bold text-brand-accent text-sm mb-3">$60.00 MXN</p>
-                </div>
-                <a href="https://wa.me/529602345184?text=¡Hola!%20Me%20interesa%20cotizar:%20Sticker%20A4%20Especial%20($60)" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 rounded-lg transition text-[11px] text-center block">
-                    Pedir por WA
-                </a>
+            <!-- Post 4 -->
+            <div onclick="document.getElementById('modal4').classList.remove('hidden')" class="aspect-square bg-brand-lightAccent rounded-lg border border-brand-border flex flex-col items-center justify-center p-2 cursor-pointer hover:opacity-90 transition">
+                <i class="fa-solid fa-sparkles text-2xl md:text-3xl text-brand-accent mb-1"></i>
+                <p class="text-[10px] md:text-xs font-bold text-center line-clamp-2">Stickers Especiales</p>
+                <span class="text-[10px] font-bold text-brand-accent mt-0.5">$60</span>
             </div>
 
-            <!-- Item 5: Pack Celular -->
-            <div class="bg-white rounded-xl border border-brand-border p-4 shadow-sm flex flex-col justify-between">
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-brand-lightAccent flex items-center justify-center text-brand-accent text-xl mx-auto mb-2">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Stickers</span>
-                    <h3 class="font-bold text-xs md:text-sm text-brand-primary my-1">Pack Celular / Fundas</h3>
-                    <p class="text-[11px] text-gray-500 mb-2">Set de 6 a 8 piezas</p>
-                    <p class="font-bold text-brand-accent text-sm mb-3">$80.00 MXN</p>
-                </div>
-                <a href="https://wa.me/529602345184?text=¡Hola!%20Me%20interesa%20cotizar:%20Pack%20Celular%20($80)" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 rounded-lg transition text-[11px] text-center block">
-                    Pedir por WA
-                </a>
+            <!-- Post 5 -->
+            <div onclick="document.getElementById('modal5').classList.remove('hidden')" class="aspect-square bg-brand-lightAccent rounded-lg border border-brand-border flex flex-col items-center justify-center p-2 cursor-pointer hover:opacity-90 transition">
+                <i class="fa-solid fa-mobile-screen-button text-2xl md:text-3xl text-brand-accent mb-1"></i>
+                <p class="text-[10px] md:text-xs font-bold text-center line-clamp-2">Pack para Celular</p>
+                <span class="text-[10px] font-bold text-brand-accent mt-0.5">$80</span>
             </div>
 
-            <!-- Item 6: Prints A4 -->
-            <div class="bg-white rounded-xl border border-brand-border p-4 shadow-sm flex flex-col justify-between">
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-brand-lightAccent flex items-center justify-center text-brand-accent text-xl mx-auto mb-2">
-                        <i class="fa-solid fa-image"></i>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Decoración</span>
-                    <h3 class="font-bold text-xs md:text-sm text-brand-primary my-1">Prints / Póster A4</h3>
-                    <p class="text-[11px] text-gray-500 mb-2">Diseño Gamer o Anime</p>
-                    <p class="font-bold text-brand-accent text-sm mb-3">$50.00 MXN</p>
-                </div>
-                <a href="https://wa.me/529602345184?text=¡Hola!%20Me%20interesa%20cotizar:%20Prints%20A4%20($50)" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 rounded-lg transition text-[11px] text-center block">
-                    Pedir por WA
-                </a>
+            <!-- Post 6 -->
+            <div onclick="document.getElementById('modal6').classList.remove('hidden')" class="aspect-square bg-brand-lightAccent rounded-lg border border-brand-border flex flex-col items-center justify-center p-2 cursor-pointer hover:opacity-90 transition">
+                <i class="fa-solid fa-image text-2xl md:text-3xl text-brand-accent mb-1"></i>
+                <p class="text-[10px] md:text-xs font-bold text-center line-clamp-2">Prints / Póster A4</p>
+                <span class="text-[10px] font-bold text-brand-accent mt-0.5">$50</span>
             </div>
 
-            <!-- Item 7: Organizador Borrable -->
-            <div class="bg-white rounded-xl border border-brand-border p-4 shadow-sm flex flex-col justify-between">
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-brand-lightAccent flex items-center justify-center text-brand-accent text-xl mx-auto mb-2">
-                        <i class="fa-solid fa-calendar-days"></i>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Decoración</span>
-                    <h3 class="font-bold text-xs md:text-sm text-brand-primary my-1">Organizador Borrable A4</h3>
-                    <p class="text-[11px] text-gray-500 mb-2">Planificador mensual encapsulado</p>
-                    <p class="font-bold text-brand-accent text-sm mb-3">$60.00 MXN</p>
-                </div>
-                <a href="https://wa.me/529602345184?text=¡Hola!%20Me%20interesa%20cotizar:%20Organizador%20Borrable%20A4%20($60)" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 rounded-lg transition text-[11px] text-center block">
-                    Pedir por WA
-                </a>
+            <!-- Post 7 -->
+            <div onclick="document.getElementById('modal7').classList.remove('hidden')" class="aspect-square bg-brand-lightAccent rounded-lg border border-brand-border flex flex-col items-center justify-center p-2 cursor-pointer hover:opacity-90 transition">
+                <i class="fa-solid fa-calendar-days text-2xl md:text-3xl text-brand-accent mb-1"></i>
+                <p class="text-[10px] md:text-xs font-bold text-center line-clamp-2">Organizador A4</p>
+                <span class="text-[10px] font-bold text-brand-accent mt-0.5">$60</span>
             </div>
 
-            <!-- Item 8: Cuadros Acrílicos -->
-            <div class="bg-white rounded-xl border border-brand-border p-4 shadow-sm flex flex-col justify-between">
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-brand-lightAccent flex items-center justify-center text-brand-accent text-xl mx-auto mb-2">
-                        <i class="fa-solid fa-square-full"></i>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Decoración</span>
-                    <h3 class="font-bold text-xs md:text-sm text-brand-primary my-1">Cuadros Acrílicos</h3>
-                    <p class="text-[11px] text-gray-500 mb-2">Efecto vidrio rígido</p>
-                    <p class="font-bold text-brand-accent text-sm mb-3">$250.00 MXN</p>
-                </div>
-                <a href="https://wa.me/529602345184?text=¡Hola!%20Me%20interesa%20cotizar:%20Cuadros%20Acrílicos%20($250)" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 rounded-lg transition text-[11px] text-center block">
-                    Pedir por WA
-                </a>
+            <!-- Post 8 -->
+            <div onclick="document.getElementById('modal8').classList.remove('hidden')" class="aspect-square bg-brand-lightAccent rounded-lg border border-brand-border flex flex-col items-center justify-center p-2 cursor-pointer hover:opacity-90 transition">
+                <i class="fa-solid fa-square-full text-2xl md:text-3xl text-brand-accent mb-1"></i>
+                <p class="text-[10px] md:text-xs font-bold text-center line-clamp-2">Cuadros Acrílicos</p>
+                <span class="text-[10px] font-bold text-brand-accent mt-0.5">$250</span>
             </div>
 
-            <!-- Item 9: Tarjetas de Presentación -->
-            <div class="bg-white rounded-xl border border-brand-border p-4 shadow-sm flex flex-col justify-between">
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-brand-lightAccent flex items-center justify-center text-brand-accent text-xl mx-auto mb-2">
-                        <i class="fa-solid fa-id-card"></i>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Papelería</span>
-                    <h3 class="font-bold text-xs md:text-sm text-brand-primary my-1">Tarjetas de Presentación</h3>
-                    <p class="text-[11px] text-gray-500 mb-2">100 pzas en Opalina/Fotográfico</p>
-                    <p class="font-bold text-brand-accent text-sm mb-3">$220.00 MXN</p>
-                </div>
-                <a href="https://wa.me/529602345184?text=¡Hola!%20Me%20interesa%20cotizar:%20Tarjetas%20de%20Presentación%20($220)" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 rounded-lg transition text-[11px] text-center block">
-                    Pedir por WA
-                </a>
+            <!-- Post 9 -->
+            <div onclick="document.getElementById('modal9').classList.remove('hidden')" class="aspect-square bg-brand-lightAccent rounded-lg border border-brand-border flex flex-col items-center justify-center p-2 cursor-pointer hover:opacity-90 transition">
+                <i class="fa-solid fa-id-card text-2xl md:text-3xl text-brand-accent mb-1"></i>
+                <p class="text-[10px] md:text-xs font-bold text-center line-clamp-2">Tarjetas Presentación</p>
+                <span class="text-[10px] font-bold text-brand-accent mt-0.5">$220</span>
             </div>
 
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-brand-border py-6 px-4 text-center text-xs text-gray-600">
-        <p class="font-bold text-brand-primary text-sm">El Taller de Brownie</p>
-        <p>Impresión Boutique & Papelería Creativa • Cancún, Q.R.</p>
-    </footer>
+    <!-- Modales de Productos al tocar cada cuadro -->
+    <div id="modal1" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center relative">
+            <button onclick="document.getElementById('modal1').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 text-xl font-bold">✕</button>
+            <i class="fa-solid fa-note-sticky text-4xl text-brand-accent mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Stickers A4 Estándar</h3>
+            <p class="text-xs text-gray-600 mb-3">Impresión en papel fotográfico Glossy brillante con corte exacto.</p>
+            <p class="text-base font-bold text-brand-accent mb-4">$40.00 MXN</p>
+            <a href="https://wa.me/529602345184?text=¡Hola!%20Quiero%20cotizar%20Stickers%20A4%20Estándar" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg block text-xs">Pedir por WhatsApp</a>
+        </div>
+    </div>
 
-</body>
-</html>
+    <div id="modal2" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center relative">
+            <button onclick="document.getElementById('modal2').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 text-xl font-bold">✕</button>
+            <i class="fa-solid fa-box-archive text-4xl text-brand-accent mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Pack 5 Planillas Estándar</h3>
+            <p class="text-xs text-gray-600 mb-3">Aproximadamente 100 stickers listos para despegar.</p>
+            <p class="text-base font-bold text-brand-accent mb-4">$170.00 MXN</p>
+            <a href="https://wa.me/529602345184?text=¡Hola!%20Quiero%20cotizar%20el%20Pack%205%20Planillas%20Estándar" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg block text-xs">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal3" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center relative">
+            <button onclick="document.getElementById('modal3').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 text-xl font-bold">✕</button>
+            <i class="fa-solid fa-droplet-slash text-4xl text-brand-accent mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Stickers A4 Prémium</h3>
+            <p class="text-xs text-gray-600 mb-3">Laminado protector lavable (acabado Mate o Glossy) ideal para termos.</p>
+            <p class="text-base font-bold text-brand-accent mb-4">$50.00 MXN</p>
+            <a href="https://wa.me/529602345184?text=¡Hola!%20Quiero%20cotizar%20Stickers%20A4%20Prémium" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg block text-xs">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal4" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center relative">
+            <button onclick="document.getElementById('modal4').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 text-xl font-bold">✕</button>
+            <i class="fa-solid fa-sparkles text-4xl text-brand-accent mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Stickers A4 Especiales</h3>
+            <p class="text-xs text-gray-600 mb-3">Materiales llamativos: Holográfico o Vinil Transparente.</p>
+            <p class="text-base font-bold text-brand-accent mb-4">$60.00 MXN</p>
+            <a href="https://wa.me/529602345184?text=¡Hola!%20Quiero%20cotizar%20Stickers%20A4%20Especiales" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg block text-xs">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal5" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center relative">
+            <button onclick="document.getElementById('modal5').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 text-xl font-bold">✕</button>
+            <i class="fa-solid fa-mobile-screen-button text-4xl text-brand-accent mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Pack para Celular / Fundas</h3>
+            <p class="text-xs text-gray-600 mb-3">Set especial con 6 a 8 stickers variados para tu funda.</p>
+            <p class="text-base font-bold text-brand-accent mb-4">$80.00 MXN</p>
+            <a href="https://wa.me/529602345184?text=¡Hola!%20Quiero%20cotizar%20el%20Pack%20para%20Celular" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg block text-xs">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal6" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center relative">
+            <button onclick="document.getElementById('modal6').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 text-xl font-bold">✕</button>
+            <i class="fa-solid fa-image text-4xl text-brand-accent mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Prints / Póster A4</h3>
+            <p class="text-xs text-gray-600 mb-3">Impresiones de alta resolución temática Gamer o Anime.</p>
+            <p class="text-base font-bold text-brand-accent mb-4">$50.00 MXN</p>
+            <a href="https://wa.me/529602345184?text=¡Hola!%20Quiero%20cotizar%20Prints%20/ %20Póster%20A4" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg block text-xs">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal7" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center relative">
+            <button onclick="document.getElementById('modal7').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 text-xl font-bold">✕</button>
+            <i class="fa-solid fa-calendar-days text-4xl text-brand-accent mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Organizador Borrable A4</h3>
+            <p class="text-xs text-gray-600 mb-3">Planificador mensual encapsulado para reutilizar.</p>
+            <p class="text-base font-bold text-brand-accent mb-4">$60.00 MXN</p>
+            <a href="https://wa.me/529602345184?text=¡Hola!%20Quiero%20cotizar%20el%20Organizador%20Borrable%20A4" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg block text-xs">Pedir por WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal8" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center relative">
+            <button onclick="document.getElementById('modal8').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 text-xl font-bold">✕</button>
+            <i class="fa-solid fa-square-full text-4xl text-brand-accent mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Cuadros Acrílicos</h3>
+            <p class="text-xs text-gray-600 mb-3">Diseño elegante con efecto vidrio rígido para decorar tus espacios.</p>
+            <p class="text-base font-bold text-brand-accent mb-4">$250.00 MXN</p>
+            <a href="https://wa.me/529602345184?t
