@@ -40,50 +40,25 @@
     </script>
 
     <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F9F6F0;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #D0C3B2;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #A67C52;
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #F9F6F0; }
+        ::-webkit-scrollbar-thumb { background: #D0C3B2; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #A67C52; }
         
-        .story-ring {
-            background: linear-gradient(45deg, #C5A059, #A67C52, #E8D2C9, #8B5E3C);
-        }
-
-        .post-overlay {
-            background: rgba(56, 39, 26, 0.55);
-            backdrop-filter: blur(2px);
-        }
-
-        .tab-active {
-            border-top: 2px solid #4A3525;
-            color: #4A3525;
-            font-weight: 700;
-        }
+        .story-ring { background: linear-gradient(45deg, #C5A059, #A67C52, #E8D2C9, #8B5E3C); }
+        .post-overlay { background: rgba(56, 39, 26, 0.55); backdrop-filter: blur(2px); }
+        .tab-active { border-top: 2px solid #4A3525; color: #4A3525; font-weight: 700; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.98); }
             to { opacity: 1; transform: scale(1); }
         }
-
-        .animate-fade-in {
-            animation: fadeIn 0.25s ease-out forwards;
-        }
+        .animate-fade-in { animation: fadeIn 0.25s ease-out forwards; }
     </style>
 </head>
 <body class="bg-brand-bg text-brand-primary font-sans antialiased min-h-screen flex flex-col justify-between select-none">
 
-    <!-- Navbar superior estilo Instagram -->
+    <!-- Header superior -->
     <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-brand-border px-4 py-2.5">
         <div class="max-w-4xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-2">
@@ -92,9 +67,8 @@
                 <i class="fa-solid fa-circle-check text-xs text-brand-accent ml-0.5" title="Cuenta Verificada Oficial"></i>
             </div>
             
-            <!-- Acciones rápidas -->
             <div class="flex items-center space-x-3 sm:space-x-4">
-                <a href="https://wa.me/529981732170" target="_blank" class="bg-green-600 hover:bg-green-700 text-white text-xs px-3 py-1.5 rounded-full font-semibold transition flex items-center space-x-1.5 shadow-sm">
+                <a href="https://wa.me/529602345184" target="_blank" class="bg-green-600 hover:bg-green-700 text-white text-xs px-3 py-1.5 rounded-full font-semibold transition flex items-center space-x-1.5 shadow-sm">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
                     <span class="hidden sm:inline">Cotizar por WhatsApp</span>
                 </a>
@@ -109,10 +83,8 @@
     <!-- Contenido Principal -->
     <main class="max-w-4xl mx-auto w-full px-3 sm:px-4 pt-6 pb-16 flex-grow">
 
-        <!-- Sección de Perfil / Biografía -->
+        <!-- Perfil / Biografía -->
         <section class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-12 mb-8 pb-8 border-b border-brand-border">
-            
-            <!-- Avatar / Logotipo -->
             <div class="relative group cursor-pointer" onclick="openStoryModal(0)">
                 <div class="story-ring p-1 rounded-full shadow-md transition duration-300 transform group-hover:scale-105">
                     <div class="bg-white p-1 rounded-full">
@@ -133,7 +105,6 @@
                 </div>
             </div>
 
-            <!-- Información del Perfil -->
             <div class="flex-1 text-center md:text-left">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-3 mb-4">
                     <h1 class="text-2xl font-bold font-serif tracking-tight text-brand-primary">el_taller_de_brownie</h1>
@@ -207,7 +178,7 @@
             </div>
         </section>
 
-        <!-- Pestañas de Navegación del Feed -->
+        <!-- Navegación por pestañas -->
         <section class="border-t border-brand-border mb-6">
             <div class="flex justify-center space-x-6 sm:space-x-12 text-xs font-semibold tracking-wider text-gray-500 uppercase">
                 <button onclick="filterGrid('all', this)" class="tab-btn tab-active py-3 flex items-center space-x-2 transition">
@@ -229,12 +200,12 @@
             </div>
         </section>
 
-        <!-- Grid de Publicaciones de Instagram -->
+        <!-- Feed Grid -->
         <section class="grid grid-cols-3 gap-1 md:gap-4" id="feedGrid"></section>
 
     </main>
 
-    <!-- Pie de Página -->
+    <!-- Footer -->
     <footer class="bg-white border-t border-brand-border py-6 px-4 text-center text-xs text-gray-600">
         <div class="max-w-4xl mx-auto space-y-2">
             <p class="font-bold text-brand-primary font-serif text-sm">¡El Taller de Brownie!</p>
@@ -243,7 +214,7 @@
         </div>
     </footer>
 
-    <!-- Modal Detallado de Publicación -->
+    <!-- Modal Post -->
     <div id="postModal" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-2 sm:p-4 transition-opacity duration-300">
         <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row shadow-2xl relative animate-fade-in">
             <button onclick="closePostModal()" class="absolute top-3 right-3 z-10 bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/80 transition">
@@ -290,7 +261,7 @@
         </div>
     </div>
 
-    <!-- Modal de Historias -->
+    <!-- Modal Historias -->
     <div id="storyModal" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center p-4">
         <div class="relative w-full max-w-sm bg-brand-primary rounded-2xl overflow-hidden aspect-[9/16] text-white flex flex-col justify-between p-6 shadow-2xl animate-fade-in">
             <div class="absolute top-3 left-3 right-3 flex space-x-1">
@@ -314,7 +285,7 @@
             <div id="storyContent" class="my-auto text-center space-y-4 px-2"></div>
 
             <div class="mt-auto pt-4">
-                <a id="storyWspLink" href="https://wa.me/529981732170" target="_blank" class="w-full bg-white/20 hover:bg-white/30 backdrop-blur border border-white/40 rounded-full py-2.5 px-4 text-xs font-semibold flex items-center justify-between transition">
+                <a id="storyWspLink" href="https://wa.me/529602345184" target="_blank" class="w-full bg-white/20 hover:bg-white/30 backdrop-blur border border-white/40 rounded-full py-2.5 px-4 text-xs font-semibold flex items-center justify-between transition">
                     <span>Enviar mensaje al taller...</span>
                     <i class="fa-solid fa-paper-plane"></i>
                 </a>
@@ -322,7 +293,7 @@
         </div>
     </div>
 
-    <!-- Modal del Carrito -->
+    <!-- Modal Carrito -->
     <div id="cartModal" class="fixed inset-0 z-50 hidden bg-black/60 flex items-center justify-center p-4">
         <div class="bg-white rounded-xl max-w-md w-full p-6 shadow-2xl relative animate-fade-in">
             <button onclick="toggleCartModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
@@ -340,4 +311,19 @@
                 <span id="cartTotal" class="text-lg font-bold text-brand-primary">$0.00 MXN</span>
             </div>
 
-            <a id="sendCartWspBtn" href="#" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg trans
+            <a id="sendCartWspBtn" href="#" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition flex items-center justify-center space-x-2 text-sm shadow">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Enviar Cotización por WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Teléfono oficial configurado: 9602345184
+        const PHONE_NUMBER = "529602345184";
+
+        // Lista de productos editable
+        const products = [
+            {
+                id: 1,
+                category: 'stickers',
